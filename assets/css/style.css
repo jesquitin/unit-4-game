@@ -1,0 +1,62 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+body {
+    width: 100%;
+    background-image:url("../images/IndianaJonesCrystalWallpaper1280x960.jpg");
+}
+
+ol {
+    margin-left: 45px;
+}
+li, .instructions {
+    font-weight: bold;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   font-size: 18px;
+   width: 40%;
+   color: rgb(0, 0, 0);
+}
+
+.game-wins-losses {
+    float:right;
+    margin-right:500px;
+    margin-top:-150px;
+    color:white;
+}
+
+h2 {
+    float: right;
+    font-weight: bold;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   color:#fff;
+   margin-top:-1rem;
+   margin-right:55rem;
+}
+
+.games  
+
+
+
+.row {
+    margin-right: -58%;
+    margin-top: -40rem;
+    text-align:right;
+    font-size: 25px;
+    color:rgb(8, 0, 0);
+}
+.container {
+    max-width: 620px;
+   font-weight: 900;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+    
+    margin-top:1rem;
+}
+ .container img {
+    width: 125px;
+    height: 125px;
+    display: block;
+    float:right;
+    padding:10px;
+}

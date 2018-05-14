@@ -9,13 +9,18 @@
     <link rel="stylesheet" type="text/cs" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
-    <link rel="stylesheet" type="stylesheet" href="assets/css/style.css" </head>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
 
     <body>
 
         <head class="head">
             <h1 class="title"> Cyrstal Collector</h1>
         </head>
+
+        <h2>Number to Guess:
+            <span id="randomNumber"></span>
+        </h2>
 
         <div class="instructions">
             <h3>How to play the game</h3>
@@ -32,29 +37,36 @@
 
 
 
-        <h2>Number to Guess:
-            <span id="randomNumber"></span>
-        </h2>
+        
 
-        <div class="game-wins-loses">
+        <div class="game-wins-losses">
             <h3>Wins:
                 <span id="numberWins"></span>
             </h3>
 
-            <h3>Loses:
-                <span id="numberLoses"></span>
+            <h3>Losses:
+                <span id="numberLosses"></span>
+            </h3>
+            <h3>Your Score:
+                <span id="score"></span>
             </h3>
         </div>
-        <!-- Note that this div is now empty. We will fill it dynamically -->
-        <div id="crystals">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 crystals">
+                    <p class="subtitle">Click on the Crystals to Play!</p>
+                    <br/>
+                    <img src="assets/images/blue.jpg" id="blue" alt="Blue Crystal" />
+                    <br/>
+                    <img src="assets/images/green.jpg" id="green" alt="Green Crystal" />
+                    <br/>
+                    <img src="assets/images/pink.jpg" id="pink" alt="Pink Crystal" />
+                    <br/>
+                    <img src="assets/images/pruple.jpg" id="purple" alt="Purple Crystal" />
+                </div>
+            </div>
         </div>
-
-        <h3>Your total score is:</h3>
-
-        <div id="score">
-
-        </div>
-
 
 
 

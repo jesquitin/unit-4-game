@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 	//
 	// Selects a random number between 19 - 120
 	var random = Math.floor(Math.random() * 101 + 19);
@@ -6,46 +6,98 @@ $(document).ready(function() {
 	// Adds random number to html id "randomNumber"
 	$('#randomNumber').text(random);
 
+	//random numbers for crystals between 1 and 12
+	var rand1 = Math.floor(Math.random() * 11 + 1)
+	var rand2 = Math.floor(Math.random() * 11 + 1)
+	var rand3 = Math.floor(Math.random() * 11 + 1)
+	var rand4 = Math.floor(Math.random() * 11 + 1)
+	console.log(rand1, rand2, rand3, rand4);
+
+
+
 	// Keeps trak of totals
 	var userTotal = 0;
 	var wins = 0;
-	var loses = 0;
-	var numberOptions = [10, 5, 3, 7];
-    var crystals = $('#crystals');
-    var counter = 0;
+	var losses = 0;
+	var crystals = $('#crystals');
+	var counter = 0;
 
 	//add html text to wins and loses
-	$('#numberWins').text(wins);
-	$('#numberLoses').text(loses);
+	$("#numberWins").text(wins);
+	$("#numberLosses").text(losses);
 
-	//Creating the crystals images
-	for (var i = 0; i < numberOptions.length; i++) {
-		var imgRandom = Math.floor(Math.random() * 11) + 1;
-		var imageCrystal = $('<img>');
-		//give each crystal a class of  of ".crystal-image
-        imageCrystal.addClass('crystal-image');
-        
-        //image path
-        imageCrystal.attr("src", "assets/images/blue.jpg");
-        imageCrystal.attr("src", "assets/images/green.jpg");
-        imageCrystal.attr("src", "assets/images/purple.jpg");
-        imageCrystal.attr("src", "assets/images/pink.jpg");
+	//Crystal clicks
+	$('#blue').on('click', function () {
+		userTotal = userTotal + rand1;
+		console.log("New userTotal=" + userTotal);
+		$('#score').text(userTotal);
+		if (userTotal === random) {
+			yay();
+		} else if (userTotal > random) {
+			loser();
+		}
+	})
 
-        imageCrystal.attr("data-crystalvalue", numberOptions[i]);
-        console.log(imgRandom);
-        
-        //appending crystal images to html div cystals
-		crystals.append(imageCrystal);
-    }
-    
-    // This time, our click event applies to every single crystal on the page. Not just one.
-  crystals.on("click", ".crystal-image", function() {
+	$('#green').on('click', function () {
+		userTotal = userTotal + rand2;
+		console.log("New userTotal=" + userTotal);
+		$('#score').text(userTotal);
+		if (userTotal === random) {
+			yay();
+		} else if (userTotal > random) {
+			loser();
+		}
+	})
 
-  //Assigning the crystals a point value
-    var crystalValue = ($(this).attr("data-crystalvalue"));
-    crystalValue = parseInt(crystalValue);
+	$('#pink').on('click', function () {
+		userTotal = userTotal + rand3;
+		console.log("New userTotal=" + userTotal);
+		$('#score').text(userTotal);
+		if (userTotal === random) {
+			yay();
+		} else if (userTotal > random) {
+			loser();
+		}
+	})
 
-    console.log(crystalValue);
-  
-     });
+	$('#purple').on('click', function () {
+		userTotal = userTotal + rand4;
+		console.log("New userTotal=" + userTotal);
+		$('#score').text(userTotal);
+		if (userTotal === random) {
+			yay();
+		} else if (userTotal > random) {
+			loser();
+		}
+	});
+
+	//Function and alert for wins
+	function yay() {
+		alert("Good job! You won!");
+		wins++;
+		$('#numberWins').text(wins);
+		reset();
+	}
+
+	//Function and alert for losses
+	function loser() {
+		alert("Better luck next time!");
+		losses++;
+		$('#numberLosses').text(losses);
+		reset();
+	}
+
+	//Function for game reset
+	function reset() {
+		random = Math.floor(Math.random() * 101 + 19);
+		console.log(random)
+		$('#randomNumber').text(random);
+		num1 = Math.floor(Math.random() * 11 + 1);
+		num2 = Math.floor(Math.random() * 11 + 1);
+		num3 = Math.floor(Math.random() * 11 + 1);
+		num4 = Math.floor(Math.random() * 11 + 1);
+		userTotal = 0;
+		$('#totalScore').text(userTotal);
+	}
+
 });
